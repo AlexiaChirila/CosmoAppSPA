@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Nasa from "./Nasa/Nasa.jsx";
 import nasaImg from "./assets/nasa.jpg"
+import {Counter} from "./Counter/Counter.jsx";
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,6 +13,8 @@ function App() {
       <Nasa title="Nasa Info" paragraph1=" Welcome to the NASA API portal. The objective of this site is to make NASA data, including imagery, eminently accessible to application developers. This catalog focuses on broadly useful and user friendly APIs and does not hold every NASA API.
      " paragraph2="NASA astronaut Anil Menon, along with Roscosmos cosmonauts Pyotr Dubrov and Anna Kikina, arrived safely at the International Space Station Tuesday, bringing the orbiting laboratory’s crew to 10 for about the next two weeks.
        " imagePath={nasaImg} ></Nasa>
+
+        <Counter></Counter>
       {/*<section id="center">*/}
       {/*  <div className="hero">*/}
       {/*    <img src={heroImg} className="base" width="170" height="179" alt="" />*/}
