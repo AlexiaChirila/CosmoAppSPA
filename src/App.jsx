@@ -1,33 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import nasa from './assets/nasa.jpg'
+
 import './App.css'
-
-function Nasa()
-{
-  return (
-      <div>
-        <title>Nasa Info</title>
-        <p>
-          Welcome to the NASA API portal. The objective of this site is to make NASA data, including imagery, eminently accessible to application developers. This catalog focuses on broadly useful and user friendly APIs and does not hold every NASA API.
-        </p>
-        <p>
-          NASA astronaut Anil Menon, along with Roscosmos cosmonauts Pyotr Dubrov and Anna Kikina, arrived safely at the International Space Station Tuesday, bringing the orbiting laboratory’s crew to 10 for about the next two weeks.
-        </p>
-        <img src={nasa} alt="nasa" />
-      </div>
-  )
-}
-
+import Nasa from "./Nasa/Nasa.jsx";
+import nasaImg from "./assets/nasa.jpg"
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Nasa></Nasa>
+      <Nasa title="Nasa Info" paragraph1=" Welcome to the NASA API portal. The objective of this site is to make NASA data, including imagery, eminently accessible to application developers. This catalog focuses on broadly useful and user friendly APIs and does not hold every NASA API.
+     " paragraph2="NASA astronaut Anil Menon, along with Roscosmos cosmonauts Pyotr Dubrov and Anna Kikina, arrived safely at the International Space Station Tuesday, bringing the orbiting laboratory’s crew to 10 for about the next two weeks.
+       " imagePath={nasaImg} ></Nasa>
       {/*<section id="center">*/}
       {/*  <div className="hero">*/}
       {/*    <img src={heroImg} className="base" width="170" height="179" alt="" />*/}
