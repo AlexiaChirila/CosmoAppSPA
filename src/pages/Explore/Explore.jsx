@@ -1,6 +1,29 @@
 import { useState } from "react";
 import axios from "axios";
 import "./Explore.css";
+import styled, {keyframes} from "styled-components";
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+// Here we create a component that will rotate everything we pass in over two seconds
+const Rotate = styled.div`
+  display: inline-block;
+  animation: ${rotate} 2s linear infinite;
+  padding: 2rem 1rem;
+  font-size: 5.2rem;
+`;
+
+
+
+
 
 export default function Explore() {
     const [searchParam, setSearchParam] = useState("");
@@ -29,7 +52,8 @@ export default function Explore() {
 
     return (
         <div className="explore-page">
-            <h1>NASA Image Explorer</h1>
+
+            <h1>NASA Image Explorer <Rotate> 🚀 </Rotate></h1>
             <form onSubmit={handleSearch}>
                 <input
                     type="text"
