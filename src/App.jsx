@@ -12,13 +12,11 @@ function App() {
 
   return (
     <>
-     {/* <Nasa title="Nasa Info" paragraph1=" Welcome to the NASA API portal. The objective of this site is to make NASA data, including imagery, eminently accessible to application developers. This catalog focuses on broadly useful and user friendly APIs and does not hold every NASA API.*/}
-     {/*" paragraph2="NASA astronaut Anil Menon, along with Roscosmos cosmonauts Pyotr Dubrov and Anna Kikina, arrived safely at the International Space Station Tuesday, bringing the orbiting laboratory’s crew to 10 for about the next two weeks.*/}
-     {/*  " imagePath={nasaImg} ></Nasa>*/}
+      <Nasa />
 
 
-      <Component2 setCount={setCount} />
-      <Component3 counter={count} />
+      {/*<Component2 setCount={setCount} />*/}
+      {/*<Component3 counter={count} />*/}
 
       {/*<Counter></Counter>*/}
       {/*<section id="center">*/}
