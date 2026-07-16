@@ -1,10 +1,61 @@
+import { useState } from "react";
+import axios from "axios";
+import "./Explore.css";
+
 export default function Explore() {
+    const [searchParam, setSearchParam] = useState("");
+    const [results, setResults] = useState([]);
+
+    async function handleSearch(e) {
+        e.preventDefault();
+
+        try {
+            const response = await axios.get(
+                "https://images-api.nasa.gov/search",
+                {
+                    params: {
+                        q: searchParam,
+                        media_type: "image",
+                    },
+                }
+            );
+
+            setResults(response.data.collection.items);
+
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
-        <div>
-            <title>Explore NASA API</title>
-            <h1>Welcome to .....</h1>
-            <h3>Let's take a look </h3>
+        <div className="explore-page">
+            <h1>NASA Image Explorer</h1>
+            <form onSubmit={handleSearch}>
+                <input
+                    type="text"
+                    value={searchParam}
+                    onChange={(e) => setSearchParam(e.target.value)}
+                />
+
+                <button>Search</button>
+            </form>
+
+            <br/>
+
+            <div className="gallery">
+                {results.map((item, index) => (
+                    <div className="card" key={index}>
+                        <img
+                            src={item.links?.[0]?.href}
+                            alt={item.data?.[0]?.title}
+                        />
+
+                        <h2>{item.data?.[0]?.title}</h2>
+
+                        <p>{item.data?.[0]?.description}</p>
+                    </div>
+                ))}
+            </div>
         </div>
-    )
+    );
 }
