@@ -1,4 +1,5 @@
 import PhotoCard from "../PhotoCard/PhotoCard.jsx";
+import './PhotoList.css';
 
 export default function PhotoList({ photos }) {
     if (!photos.length) {

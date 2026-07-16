@@ -1,3 +1,5 @@
+import './PhotoCard.css';
+
 export default function PhotoCard({ photo }) {
     return (
         <article className="photo-card">
@@ -12,7 +14,7 @@ export default function PhotoCard({ photo }) {
             </p>
 
             <p>{photo.explanation}</p>
-            <hr/>
+
         </article>
     );
 }
