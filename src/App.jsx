@@ -2,17 +2,36 @@ import { useState } from 'react'
 
 import './App.css'
 import Nasa from "./Components/Nasa/Nasa.jsx";
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import nasaImg from "./assets/nasa.jpg"
 import {Counter} from "./Components/Counter/Counter.jsx";
 import Component2 from "./Components/Component2/Component2.jsx";
 import Component3 from "./Components/Component3/Component3.jsx";
+import Explore from "./pages/Explore/Explore.jsx";
+
+const navLinkStyles = ({ isActive }) => ({
+    color: isActive ? '#007bff' : '#333',
+    textDecoration: isActive ? 'none' : 'underline',
+    fontWeight: isActive ? 'bold' : 'normal',
+    padding: '5px 10px'
+});
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Nasa />
+        <BrowserRouter>
+            <nav style={{ marginBottom: '20px' }}>
+                <NavLink to="/" style={navLinkStyles}>Nasa</NavLink> |{" "}
+                <NavLink to="/explore" style={navLinkStyles}>Explore</NavLink>
+            </nav>
+            <Routes>
+                <Route path="/" element={<Nasa />} />
+                <Route path="/explore" element={<Explore />}  />
+            </Routes>
+        </BrowserRouter>
 
 
       {/*<Component2 setCount={setCount} />*/}

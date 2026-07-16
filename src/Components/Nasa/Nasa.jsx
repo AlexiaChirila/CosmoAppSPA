@@ -13,7 +13,6 @@ export default function Nasa() {
     const [loading, setLoading] = useState(false);
     const [photos, setPhotos] = useState([]);
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
