@@ -2,6 +2,7 @@ import DatePicker from 'react-datepicker';
 import {useState} from "react";
 import axios from "axios";
 import PhotoList from "../PhotoList/PhotoList.jsx";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default function Nasa() {
 
@@ -99,7 +100,7 @@ export default function Nasa() {
                                 onChange={(date) => setDate(date)}
                                 dateFormat="yyyy-MM-dd"
                                 maxDate={new Date()}
-                            />
+                             />
                             <hr/>
                         </div>
                     )}
